@@ -1,7 +1,12 @@
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
+
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+import undetected_chromedriver as uc
+from webdriver_manager.chrome import ChromeDriverManager
+
 import time
 
 def open_and_refresh_browser(url, num_windows, refresh_interval, open_as_tabs=True):
@@ -15,9 +20,12 @@ def open_and_refresh_browser(url, num_windows, refresh_interval, open_as_tabs=Tr
         open_as_tabs (bool): Whether to open the URLs as tabs (True) or separate windows (False).
     """
     # Set up the WebDriver for Chrome
-    service = Service()  # Add the path to chromedriver if it's not in your PATH
-    options = webdriver.ChromeOptions()
-    driver = webdriver.Chrome(service=service, options=options)
+    service = Service(ChromeDriverManager().install())  # Add the path to chromedriver if it's not in your PATH
+    # options = webdriver.ChromeOptions()
+    print("Just Checking")
+    driver = webdriver.Chrome(service = service)
+    print("-- Created Driver --")
+    # driver = webdriver.Chrome(service=service, options=options)
 
     # Open the first instance (main window or tab)
     driver.get(url)
@@ -26,13 +34,12 @@ def open_and_refresh_browser(url, num_windows, refresh_interval, open_as_tabs=Tr
     # Open additional tabs or windows
     for i in range(1, num_windows):
         if open_as_tabs:
-            # Open as a new tab
             driver.execute_script("window.open('');")
             driver.switch_to.window(driver.window_handles[-1])
         else:
-            # Open as a new window
-            options = webdriver.ChromeOptions()
-            driver_new = webdriver.Chrome(service=service, options=options)
+            # options = webdriver.ChromeOptions()
+            # driver_new = webdriver.Chrome(service=service, options=options)
+            driver_new =  webdriver.Chrome(service = service)
             driver_new.get(url)
             print(f"Opened new window for: {url}")
             continue

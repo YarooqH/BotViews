@@ -16,7 +16,7 @@ iBotViews is a Python-based automation tool that helps simulate web traffic by m
 ## 🛠️ Available Versions
 
 1. **Basic Version** (`ViewBot.py`): Simple command-line implementation
-2. **Selenium Version** (`ViewBot_Selenium.py`): More robust implementation using Selenium WebDriver
+2. **Selenium Version** (`ViewBot_Selenium.py`): More robust implementation using Selenium WebDriver (Not working)
 3. **GUI Version** (`iBotViews.py`): Full-featured GUI application with additional controls
 
 ## 📋 Requirements

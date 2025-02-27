@@ -69,29 +69,12 @@ Example:
 python ViewBot.py https://www.youtube.com/watch?v=example 5 30
 ```
 
-### Selenium Version
-```bash
-python ViewBot_Selenium.py <url> <number_of_windows> <refresh_interval> [--tabs]
-```
-
-Example:
-```bash
-python ViewBot_Selenium.py https://www.youtube.com/watch?v=example 5 30 --tabs
-```
-The `--tabs` flag opens URLs in tabs instead of separate windows.
 
 ## ⚙️ Configuration
 
 - **URL**: The webpage you want to open (e.g., https://www.youtube.com)
 - **Number of Windows**: How many browser instances to open (recommended: 2-10)
 - **Refresh Interval**: Time between refreshes in seconds (recommended: 30+)
-
-## 🔒 Safety Features
-
-- Controlled browser instance management
-- Safe browser cleanup on exit
-- Memory usage monitoring
-- Error handling for browser crashes
 
 ## 🤝 Contributing
 
@@ -105,14 +88,12 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 
 ## 📝 Missing Features/TODO
 
-- [ ] Add proxy support for IP rotation
-- [ ] Implement user-agent rotation
-- [ ] Add support for custom browser profiles
-- [ ] Implement logging system
-- [ ] Add statistics tracking
-- [ ] Create configuration file support
 - [ ] Add support for scheduled operations
 - [ ] Implement better error handling and recovery
+- [ ] Add support for opening incognito windows
+- [ ] Add support for opening tabs instead of windows
+- [ ] Add support for opening multiple instances of the same browser
+
 
 ## ⚠️ Known Issues
 
@@ -127,9 +108,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👥 Authors
 
 - Yarooq (@YarooqH)
-
-## 🙏 Acknowledgments
-
-- Thanks to the Selenium team for their excellent WebDriver
-- PyAutoGUI developers for the automation capabilities
-- All contributors and users of this project
